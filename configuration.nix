@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "dellicio-rodando-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -85,7 +85,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Evandro";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -93,7 +93,6 @@
 
 
   programs.nix-ld.enable = true;
-
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
@@ -105,9 +104,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-
-
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -125,6 +121,7 @@
     zed
     qbittorrent
     vlc
+    fzf
     		 			
   ];
 
