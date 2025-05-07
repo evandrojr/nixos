@@ -126,6 +126,7 @@
     qbittorrent
     vlc
     fzf
+    libreoffice
     		 			
   ];
 
