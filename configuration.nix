@@ -10,6 +10,8 @@
       ./hardware-configuration.nix
     ];
 
+  services.desktopManager.cosmic.enable = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -128,7 +130,7 @@
     fzf
     libreoffice
     webtorrent_desktop
-    gnome.gnome-tweaks
+    gnome-tweaks
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
