@@ -91,6 +91,10 @@
     ];
   };
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
 
   programs.nix-ld.enable = true;
 
