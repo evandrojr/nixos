@@ -127,6 +127,7 @@
     vlc
     fzf
     libreoffice
+    webtorrent_desktop
     		 			
   ];
 
@@ -150,6 +151,18 @@
       plugins = [ "git" "sudo" "docker" "kubectl" "history-substring-search" "zsh-syntax-highlighting" "zsh-autosuggestions"];
     };
   };
+
+  systemd.services.startup = {
+    description = "Executa um script após a rede estar disponível";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/home/dg/scripts/startup.sh";
+    };
+  };
+
 
   # List services that you want to enable:
 
