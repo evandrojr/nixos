@@ -152,7 +152,7 @@
     ohMyZsh = {
       enable = true;
       theme = "agnoster"; # ou outro tema de sua preferência
-      plugins = [ "git" "sudo" "docker" "kubectl" "history-substring-search" "zsh-syntax-highlighting" "zsh-autosuggestions"];
+      # plugins = [ "git" "sudo" "docker" "kubectl" "history-substring-search" "zsh-syntax-highlighting" "zsh-autosuggestions"];
     };
   };
 
