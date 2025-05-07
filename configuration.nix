@@ -131,8 +131,11 @@
     libreoffice
     webtorrent_desktop
     gnome-tweaks
-    cosmic-session
-    cosmic-launcher
+    python3
+    google-cloud-sdk
+    google-cloud-sdk-gce
+    # cosmic-session
+    # cosmic-launcher
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
