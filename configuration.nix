@@ -62,7 +62,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -91,8 +91,12 @@
     ];
   };
 
+
+  programs.nix-ld.enable = true;
+
+
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "dg";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
@@ -101,6 +105,9 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+
+
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -113,10 +120,11 @@
     git
     go
     vscode
-  #  google-chrome
+    # google-chrome
     docker
     zed
     qbittorrent
+    vlc
     		 			
   ];
 
