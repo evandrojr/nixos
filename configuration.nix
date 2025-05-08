@@ -136,6 +136,9 @@
     temurin-jre-bin-24
     direnv
     vscode-extensions.mkhl.direnv
+    psmisc
+    apacheHttpd
+    tig
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -160,16 +163,18 @@
   };
 
   virtualisation.docker.enable = true;
-  # systemd.services.startup = {
-  #   description = "Executa um script após a rede estar disponível";
-  #   after = [ "network-online.target" ];
-  #   wants = [ "network-online.target" ];
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     ExecStart = "/home/dg/scripts/startup.sh";
-  #   };
-  # };
+
+  systemd.services.startup = {
+    description = "Executa um script após a rede estar disponível";
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "/home/dg/scripts/startup.sh";
+      RemainAfterExit = true;
+    };
+  };
 
 
   # List services that you want to enable:
