@@ -50,6 +50,8 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+    # Forçar GDM a usar X11 em vez de Wayland
+  services.xserver.displayManager.gdm.wayland = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -139,6 +141,8 @@
     psmisc
     apacheHttpd
     tig
+    rustdesk
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
