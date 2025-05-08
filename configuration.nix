@@ -122,7 +122,7 @@
     git
     go
     vscode
-    # google-chrome
+    google-chrome
     docker
     zed
     qbittorrent
@@ -133,12 +133,8 @@
     gnome-tweaks
     python3
     temurin-jre-bin-24
-    # google-cloud-sdk
-    # google-cloud-sdk-gce
     direnv
     vscode-extensions.mkhl.direnv
-    # cosmic-session
-    # cosmic-launcher
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
