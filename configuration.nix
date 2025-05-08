@@ -122,6 +122,7 @@
     git
     go
     vscode
+    # (vscode.override { isInsiders = true; })
     google-chrome
     docker
     zed
