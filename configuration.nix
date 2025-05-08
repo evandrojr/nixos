@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
     ];
 
-  services.desktopManager.cosmic.enable = true;
+  # services.desktopManager.cosmic.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -132,8 +132,11 @@
     webtorrent_desktop
     gnome-tweaks
     python3
-    google-cloud-sdk
-    google-cloud-sdk-gce
+    temurin-jre-bin-24
+    # google-cloud-sdk
+    # google-cloud-sdk-gce
+    direnv
+    vscode-extensions.mkhl.direnv
     # cosmic-session
     # cosmic-launcher
   ];
@@ -159,6 +162,7 @@
     };
   };
 
+  virtualisation.docker.enable = true;
   # systemd.services.startup = {
   #   description = "Executa um script após a rede estar disponível";
   #   after = [ "network-online.target" ];
