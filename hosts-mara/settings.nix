@@ -21,10 +21,9 @@
     variant = "";
   };
 
-  myExtraPackages = with pkgs; [
-    # Pacotes específicos do host mara
+  environment.systemPackages = with pkgs; [
     htop
-    # ...adicione outros pacotes específicos aqui
+    # ...outros pacotes específicos do host mara
   ];
 
 }
