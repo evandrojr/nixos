@@ -17,11 +17,11 @@ let
   hostname = getEnvVar "HOSTNAME";
   # Determina o caminho para as configurações específicas do host e de hardware
 
-  # specificConfigPath = ./hosts-${hostname}/settings.nix;
-  # hardwareConfigPath = ./hosts-${hostname}/hardware-configuration.nix;
+  specificConfigPath = ./hosts-${hostname}/settings.nix;
+  hardwareConfigPath = ./hosts-${hostname}/hardware-configuration.nix;
 
-  specificConfigPath = ./hosts-mara/settings.nix;
-  hardwareConfigPath = ./hosts-mara/hardware-configuration.nix;
+  # specificConfigPath = ./hosts-mara/settings.nix;
+  # hardwareConfigPath = ./hosts-mara/hardware-configuration.nix;
 
 
 in {
