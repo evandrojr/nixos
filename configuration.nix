@@ -16,8 +16,8 @@ let
   hostname = getEnvVar "HOSTNAME";
 
   # Caminhos para configurações específicas
-  specificConfigPath = ./hosts-${hostname}/settings.nix;
-  hardwareConfigPath = ./hosts-${hostname}/hardware-configuration.nix;
+  specificConfigPath = ./hosts/${hostname}/settings.nix;
+  hardwareConfigPath = ./hosts/${hostname}/hardware-configuration.nix;
  
 
 in {
