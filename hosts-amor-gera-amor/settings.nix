@@ -16,6 +16,8 @@
   environment.systemPackages = with pkgs; [
     nmap
     htop
+    rustdesk
+
     # ...outros pacotes específicos do host amor-gera-amor
   ];
 

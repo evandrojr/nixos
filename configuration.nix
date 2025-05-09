@@ -123,7 +123,6 @@ in {
     psmisc
     apacheHttpd
     tig
-    # rustdesk
     xreader
     nmap
   ] ++(config.myExtraPackages or []);
