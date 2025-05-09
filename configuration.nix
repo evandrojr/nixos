@@ -4,26 +4,20 @@ let
   # Lê o conteúdo do arquivo .env
   envFile = builtins.readFile ./.env;
 
-  # Função para extrair o valor da variável HOSTNAME
+  # Função para extrair variáveis de ambiente
   getEnvVar = name: let
-    pattern = ''^${name}=(.*)$'';
-    matches = builtins.match pattern envFile;
+    matches = builtins.match ".*${name}=([^\n]*).*" envFile;
   in
     if matches != null then
-      builtins.elemAt matches 0
+      lib.strings.removeSuffix " " (builtins.elemAt matches 0)
     else
       throw ''Variável ${name} não encontrada no arquivo .env'';
 
   hostname = getEnvVar "HOSTNAME";
 
-
-  # Determina o caminho para as configurações específicas do host e de hardware
-
+  # Caminhos para configurações específicas
   specificConfigPath = ./hosts-${hostname}/settings.nix;
   hardwareConfigPath = ./hosts-${hostname}/hardware-configuration.nix;
-
-  # specificConfigPath = ./hosts-mara/settings.nix;
-  # hardwareConfigPath = ./hosts-mara/hardware-configuration.nix;
  
 
 in {
