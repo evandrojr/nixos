@@ -15,6 +15,7 @@
 
   environment.systemPackages = with pkgs; [
     nmap
+    htop
     # ...outros pacotes específicos do host amor-gera-amor
   ];
 
