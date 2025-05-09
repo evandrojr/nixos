@@ -53,11 +53,6 @@ in {
     LC_TIME = "pt_BR.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "br";
-    variant = "";
-  };
 
   # Configure console keymap
   console.keyMap = "br-abnt2";
@@ -128,7 +123,7 @@ in {
     psmisc
     apacheHttpd
     tig
-    rustdesk
+    # rustdesk
     xreader
     nmap
   ];
