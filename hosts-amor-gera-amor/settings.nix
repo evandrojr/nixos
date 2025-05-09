@@ -13,4 +13,11 @@
     variant = "";
   };
 
+  myExtraPackages = with pkgs; [
+    # Pacotes específicos do host amor-gera-amor
+    nmap
+    htop
+    # ...adicione outros pacotes específicos aqui
+  ];
+
 }

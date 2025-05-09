@@ -126,7 +126,7 @@ in {
     # rustdesk
     xreader
     nmap
-  ];
+  ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
     enable = true;
