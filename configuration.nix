@@ -6,27 +6,27 @@ let
 
   # Função para extrair o valor da variável HOSTNAME
   getEnvVar = name: let
-    pattern = "^${name}=(.*)$";
+    pattern = ''^${name}=(.*)$'';
     matches = builtins.match pattern envFile;
   in
     if matches != null then
       builtins.elemAt matches 0
     else
-      throw "Variável ${name} não encontrada no arquivo .env";
+      throw ''Variável ${name} não encontrada no arquivo .env'';
 
   hostname = getEnvVar "HOSTNAME";
+  specificConfigPath = ./hosts-${hostname}/settings.nix;
+  hardwareConfigPath = ./hosts-${hostname}/hardware-configuration.nix;
 in {
 
-
-  # builtins.trace "Hostname atual: ${hostname}" hostname
   # Define o hostname do sistema
   networking.hostName = hostname;
 
-  # Importa configurações específicas com base no hostname
+  # Importa configurações comuns, específicas e de hardware com base no hostname
   imports = [
-    # ./common/base.nix
-    (./hosts- + "${hostname}/configuration.nix")
+    ./common.nix
+    hardwareConfigPath
+    specificConfigPath
   ];
-
 
 }
