@@ -15,8 +15,15 @@ let
       throw ''Variável ${name} não encontrada no arquivo .env'';
 
   hostname = getEnvVar "HOSTNAME";
-  specificConfigPath = /etc/nixos/hosts-${hostname}/settings.nix;
-  hardwareConfigPath = /etc/nixos/hosts-${hostname}/hardware-configuration.nix;
+  # Determina o caminho para as configurações específicas do host e de hardware
+
+  # specificConfigPath = ./hosts-${hostname}/settings.nix;
+  # hardwareConfigPath = ./hosts-${hostname}/hardware-configuration.nix;
+
+  specificConfigPath = ./hosts-mara/settings.nix;
+  hardwareConfigPath = ./hosts-mara/hardware-configuration.nix;
+
+
 in {
 
   # Define o hostname do sistema
