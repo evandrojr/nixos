@@ -14,7 +14,7 @@ let
     else
       throw ''Variável ${name} não encontrada no arquivo .env'';
 
-  hostname = getEnvVar "HOSTNAME";
+  hostname = builtins.replaceStrings ["-"] [""] (getEnvVar "HOSTNAME");
   # Determina o caminho para as configurações específicas do host e de hardware
 
   specificConfigPath = ./hosts-${hostname}/settings.nix;
