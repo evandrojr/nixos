@@ -128,6 +128,8 @@ in {
     tig
     xreader
     nmap
+    google-cloud-sdk
+    google-cloud-sdk-gce
   ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
