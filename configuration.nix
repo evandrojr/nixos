@@ -128,8 +128,13 @@ in {
     tig
     xreader
     nmap
-    google-cloud-sdk
-    google-cloud-sdk-gce
+    hyprland
+    # hyprland-garuda
+    hyprpaper
+    hyprpicker
+    # hyprland-scripts
+    # hyprland-scripts-hyprpicker
+    # hyprland-scripts-hyprpaper
   ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
