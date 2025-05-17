@@ -35,6 +35,18 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Habilita suporte ao Wayland e Hyprland
+  # programs.hyprland.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
+
+  # # Suporte para swaylock/swayidle e ferramentas comuns no Wayland
+  # security.pam.services.login.enableGnomeKeyring = true;
+  # programs.dconf.enable = true;
+
+  # Login gráfico
+  # services.displayManager.sddm.enable = true;  # ou outro, como GDM
+
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -135,6 +147,7 @@ in {
     # hyprland-scripts
     # hyprland-scripts-hyprpicker
     # hyprland-scripts-hyprpaper
+    ventoy-full-gtk
   ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
