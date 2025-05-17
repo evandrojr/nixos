@@ -148,6 +148,7 @@ in {
     # hyprland-scripts-hyprpicker
     # hyprland-scripts-hyprpaper
     ventoy-full-gtk
+    pxz
   ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
