@@ -149,6 +149,7 @@ in {
     # hyprland-scripts-hyprpaper
     ventoy-full-gtk
     pxz
+    sabnzbd
   ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
