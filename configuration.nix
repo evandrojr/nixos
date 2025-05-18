@@ -38,17 +38,6 @@ in {
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Habilita suporte ao Wayland e Hyprland
-  # programs.hyprland.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
-
-  # # Suporte para swaylock/swayidle e ferramentas comuns no Wayland
-  # security.pam.services.login.enableGnomeKeyring = true;
-  # programs.dconf.enable = true;
-
-  # Login gráfico
-  # services.displayManager.sddm.enable = true;  # ou outro, como GDM
-
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -102,6 +91,20 @@ in {
   };
 
   programs.nix-ld.enable = true;
+
+
+  # if you use pulseaudio
+  # nixpkgs.config.pulseaudio = true;
+
+  services.xserver = {
+    # enable = true;
+    desktopManager = {
+      xterm.enable = false;
+      xfce.enable = true;
+    };
+  };
+  services.displayManager.defaultSession = "xfce";
+  
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
