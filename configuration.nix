@@ -153,6 +153,7 @@ in {
     ventoy-full-gtk
     pxz
     sabnzbd
+    nemo
   ] ++(config.myExtraPackages or []);
 
   programs.zsh = {
